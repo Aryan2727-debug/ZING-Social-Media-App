@@ -16,3 +16,12 @@ The shadcn-ui library offers <b>modular, customizable components</b> that contri
   <li>Appwrite</li>
   <li>React Query</li>
 </ul>
+
+## Features
+<ul>
+  <li><b>Authentication System</b>: A robust authentication system ensuring security and user privacy</li>
+  <li><b>Explore Page</b>: Homepage for users to explore posts, with a featured section for top creators</li>
+  <li><b>Create Post Page</b>: Implement a user-friendly create post page with effortless file management, storage, and drag-drop feature</li>
+  <li><b>Responsive UI with Bottom Bar</b>: A responsive UI with a bottom bar, enhancing the mobile app feel for seamless navigation</li>
+  <li><b>React Query Integration</b>: Incorporate the React Query (Tanstack Query) data fetching library for, auto caching to enhance performance, parallel queries for efficient data retrieval, first-class mutations and more</li>
+</ul>
