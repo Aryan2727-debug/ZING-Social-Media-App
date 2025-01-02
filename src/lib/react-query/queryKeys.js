@@ -1,5 +1,5 @@
 export const QUERY_KEYS = {
-    // AUTH KEYS
+  // AUTH KEYS
   CREATE_USER_ACCOUNT: "createUserAccount",
 
   // USER KEYS

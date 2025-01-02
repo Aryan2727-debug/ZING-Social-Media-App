@@ -1,5 +1,6 @@
 import Loader from "./Loader";
 import GridPostList from "./GridPostList";
+import PropTypes from 'prop-types';
 
 const SearchResults = ({ isSearchFetching, searchedPosts }) => {
   if (isSearchFetching) {
@@ -20,3 +21,8 @@ const SearchResults = ({ isSearchFetching, searchedPosts }) => {
 };
 
 export default SearchResults;
+
+SearchResults.propTypes = {
+  isSearchFetching: PropTypes.bool.isRequired,
+  searchedPosts: PropTypes.object.isRequired,
+};

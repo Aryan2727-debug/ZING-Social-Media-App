@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { getCurrentUser } from '../lib/appwrite/api';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const INITIAL_USER = {
     id: '',
@@ -82,3 +83,7 @@ const AuthProvider = ({ children }) => {
 export default AuthProvider;
 
 export const useUserContext = () => useContext(AuthContext);
+
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired
+};

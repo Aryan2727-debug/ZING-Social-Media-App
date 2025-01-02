@@ -17,6 +17,7 @@ import { PostValidation } from "../../lib/validation";
 import { useUserContext } from "../../context/AuthContext";
 import { useCreatePost, useUpdatePost } from "../../lib/react-query/queriesAndMutations";
 import { useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const PostForm = ({ post, action }) => {
     const navigate = useNavigate();
@@ -141,3 +142,8 @@ const PostForm = ({ post, action }) => {
 };
 
 export default PostForm;
+
+PostForm.propTypes = {
+  post: PropTypes.object,
+  action: PropTypes.string.isRequired
+};

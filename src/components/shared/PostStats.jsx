@@ -3,6 +3,7 @@ import Loader from "./Loader";
 import { useLikePost, useSavePost, useDeleteSavePost } from "../../lib/react-query/queriesAndMutations";
 import { useGetCurrentUser } from "../../lib/react-query/queriesAndMutations";
 import { checkIsLiked } from "../../lib/utils";
+import PropTypes from 'prop-types';
 
 const PostStats = ({ post, userId }) => {
   const likesList = post.likes.map((user) => user.$id);
@@ -79,3 +80,8 @@ const PostStats = ({ post, userId }) => {
 };
 
 export default PostStats;
+
+PostStats.propTypes = {
+  post: PropTypes.object.isRequired,
+  userId: PropTypes.string.isRequired
+};

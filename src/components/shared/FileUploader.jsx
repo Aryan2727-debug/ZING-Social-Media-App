@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { Button } from "@/components/ui/button";
 import { useDropzone } from 'react-dropzone';
+import PropTypes from 'prop-types';
 
 const FileUploader = ({ fieldChange, mediaUrl }) => {
   const [file, setFile] = useState([]);
@@ -54,3 +55,8 @@ const FileUploader = ({ fieldChange, mediaUrl }) => {
 };
 
 export default FileUploader;
+
+FileUploader.propTypes = {
+  fieldChange: PropTypes.func.isRequired,
+  mediaUrl: PropTypes.string
+};

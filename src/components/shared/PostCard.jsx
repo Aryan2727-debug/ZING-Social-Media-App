@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { timeAgo } from "../../lib/utils";
 import { useUserContext } from "../../context/AuthContext";
 import PostStats from "./PostStats";
+import PropTypes from 'prop-types';
 
 const PostCard = ({ post }) => {
   const { user } = useUserContext();
@@ -69,3 +70,7 @@ const PostCard = ({ post }) => {
 };
 
 export default PostCard;
+
+PostCard.propTypes = {
+  post: PropTypes.object.isRequired
+};

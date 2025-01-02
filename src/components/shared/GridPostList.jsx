@@ -1,6 +1,7 @@
 import PostStats from "./PostStats";
 import { Link } from "react-router-dom";
 import { useUserContext } from "../../context/AuthContext";
+import PropTypes from 'prop-types';
 
 const GridPostList = ({ posts, showUser = true, showStats = true }) => {
   const { user } = useUserContext();
@@ -37,3 +38,9 @@ const GridPostList = ({ posts, showUser = true, showStats = true }) => {
 };
 
 export default GridPostList;
+
+GridPostList.propTypes = {
+  posts: PropTypes.array.isRequired,
+  showUser: PropTypes.bool,
+  showStats: PropTypes.bool
+};
