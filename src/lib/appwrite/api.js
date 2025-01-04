@@ -380,3 +380,19 @@ export async function searchPosts(searchTerm) {
     };
 };
 
+export async function getUserById(userId) {
+    try {
+      const user = await databases.getDocument(
+        appwriteConfig.databaseId,
+        appwriteConfig.userCollectionId,
+        userId
+      );
+  
+      if (!user) throw Error;
+  
+      return user;
+    } catch (error) {
+      console.log(error);
+    };
+};
+
