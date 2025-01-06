@@ -14,7 +14,9 @@ import {
     deletePost,
     getInfinitePosts,
     searchPosts,
-    getUserById
+    getUserById,
+    updateUser,
+    getUsers
 } from "../appwrite/api";
 import { QUERY_KEYS } from "./queryKeys";
 
@@ -182,5 +184,27 @@ export const useGetUserById = (userId) => {
       queryKey: [QUERY_KEYS.GET_USER_BY_ID, userId],
       queryFn: () => getUserById(userId),
       enabled: !!userId,
+    });
+};
+
+export const useUpdateUser = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+      mutationFn: (user) => updateUser(user),
+      onSuccess: (data) => {
+        queryClient.invalidateQueries({
+          queryKey: [QUERY_KEYS.GET_CURRENT_USER],
+        });
+        queryClient.invalidateQueries({
+          queryKey: [QUERY_KEYS.GET_USER_BY_ID, data?.$id],
+        });
+      },
+    });
+};
+
+export const useGetUsers = (limit) => {
+    return useQuery({
+      queryKey: [QUERY_KEYS.GET_USERS],
+      queryFn: () => getUsers(limit),
     });
 };
