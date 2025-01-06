@@ -19,11 +19,11 @@ export const sidebarLinks = [
       route: "/all-users",
       label: "People",
     },
-    {
-      imgURL: "/assets/icons/bookmark.svg",
-      route: "/saved",
-      label: "Saved",
-    }
+    // {
+    //   imgURL: "/assets/icons/bookmark.svg",
+    //   route: "/saved",
+    //   label: "Saved",
+    // }
   ];
   
   export const bottombarLinks = [
